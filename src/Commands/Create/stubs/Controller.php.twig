@@ -1,0 +1,22 @@
+<?php
+declare(strict_types=1);
+
+{{ copyright }}
+
+namespace {{ namespace }};
+
+use OCP\AppFramework\Controller;
+use OCP\AppFramework\Http\TemplateResponse;
+use OCP\IRequest;
+
+class {{ class }} extends Controller {
+
+	public function __construct($appName, IRequest $request) {
+		parent::__construct($appName, $request);
+	}
+
+	public function index() {
+		return new TemplateResponse(Application::APP_ID, 'main');
+	}
+
+}

@@ -1,0 +1,20 @@
+<?php
+declare(strict_types=1);
+
+{{ copyright }}
+
+namespace {{ namespace }};
+
+use OCP\EventDispatcher\IEventListener;
+
+class {{ class }} extends Event {
+
+	public function handle(Event $event): void {
+        if (!$event instanceof {{ events | join(' && !$event instanceof ') | raw }}) {
+            return;
+        }
+
+        // to implement
+    }
+
+}
