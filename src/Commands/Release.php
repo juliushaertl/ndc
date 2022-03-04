@@ -52,7 +52,7 @@ class Release extends Command {
 
 		exec("git status --porcelain", $statusOutput, $result);
 		$statusOutput = implode("\n", $statusOutput);
-		if ($statusOutput !== '' && !$input->getOption('skip-dirty-check')) {
+		if ($statusOutput !== '' && !$input->getOption('skip-dirty-check') && $this->shouldExecute) {
 			$output->writeln('<error>Git repository should be clean.</error>');
 			return Command::INVALID;
 		}
