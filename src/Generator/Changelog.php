@@ -150,7 +150,7 @@ class Changelog {
 				$user = '';
 			}
 
-			$output->writeln('- #' . $pullRequest['number'] . ' ' . $title . $user);
+			$output->writeln('- ' . $title . $user . ' [#' . $pullRequest['number'] . '](' . $pullRequest['url'] . ')' );
 		}
 		$output->writeln('');
 	}
